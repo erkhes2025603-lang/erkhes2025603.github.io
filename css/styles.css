@@ -7,6 +7,62 @@ header{
     align-items: center;
     display: flex;
     justify-content: space-between;
-    
+    align-items: center;
 }
+nav a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+nav ul{
+    display: flex;
+    gap: 20px;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.plans{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+.plan-money{
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+.plan-money.featured{
+    background-color: #ffcc00;
+}
+.plan-money h3{
+    margin-bottom: 10px;
+}
+.plan-money .price{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.plan-money a{
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.plan-money a:hover{
+    background-color: #0056b3;
+}
+
 
