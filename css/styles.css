@@ -17,7 +17,7 @@ nav a{
     letter-spacing: 1px;
     border-radius: 10px;
     padding: 10px 20px;
-    transition: background-color 0.3s ease;
+    background-color: thistle;
 }
 nav ul{
     display: flex;
@@ -30,6 +30,29 @@ nav ul li a{
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+h1{
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+h2{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h3{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  
+}
+
+p{
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 .plans{
     display: flex;
