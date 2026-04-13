@@ -1,91 +1,442 @@
-html{
+
+html {
   height: 100%;
   width: 100%;
 }
-header{
-    padding: 20px 40px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+body {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
-nav a{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 10px;
-    padding: 10px 20px;
-    background-color: thistle;
+
+/* header styles */
+header {
+  background-color: #000;
+  border-bottom: 3px solid #d4af37;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-nav ul{
-    display: flex;
-    gap: 20px;
-}
-nav ul li{
-    list-style: none;
-}
-nav ul li a{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-h1{
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-h2{
+
+.logo h1{
+  color: #d4af37;
   font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  margin: 0;
+  padding: 0;
+}
+.logo p{
+  color: #ffd700;
+  font-size: 0.9rem;
+  margin: 5px 0 0 0;
+}
+nav{
+  display: flex;
+  gap: 15px;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  padding: 10px 15px;
+  border: 2px solid #d4af37;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav a:hover{
+  background-color: #d4af37;
+  color: black;
+  transition: all 0.3s;
+}
+
+/* trying different approach */
+h1{
+  color: #d4af37;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* different h2 style */
+h2{
+  color: #d4af37;
+  font-size: 1.8rem;
+  margin: 20px 0;
 }
 
 h3{
+  color: #ffd700;
   font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  
+  margin: 15px 0 10px 0;
+}
+
+/* footer headings */
+h4{
+  color: #ffd700;
+  margin: 10px 0;
 }
 
 p{
-  font-size: 1rem;
+  color: #f5f5f5;
   line-height: 1.6;
+  margin: 10px 0;
+  margin-bottom: 60px;
+}
+main{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+section{
+  margin: 40px 0;
+  padding: 20px 0;
+}
+
+.section_label, .section-label {
+  color: #ffd700;
+  font-size: 0.9rem;
   margin-bottom: 10px;
 }
-.plans{
-    display: flex;
-    gap: 20px;
+
+.welcome_section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.welcome-content {
+  flex: 1;
+}
+
+.welcome-content h2 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.welcome-tag {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.welcome-button {
+  margin-top: 20px;
+}
+
+.button-primary, .button-secondary {
+  padding: 12px 25px;
+  margin-right: 10px;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button-primary{
+  background-color: #d4af37;
+  color: black;
+  font-weight: bold;
+}
+
+.button-primary:hover {
+  background-color: #ffd700;
+  /* lightens on hover */
+  background-color: #ffd700;
+}
+
+/* tried this before but didnt work */
+.button-secondary {
+  background-color: #333;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+}
+
+.button-secondary:hover {
+  background-color: #555;
+}
+
+.welcome-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat {
+  background-color: #222;
+  padding: 20px;
+  border-left: 3px solid #d4af37;
+  text-align: center;
+}
+
+.stat strong {
+  color: #d4af37;
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stat span {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.why_us{
+  background-color: #222;
+  padding: 30px;
+  border-top: 3px solid #d4af37;
+}
+
+.why_us h2 {
+  margin-bottom: 10px;
+}
+
+.why_us > p{
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.why{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.why article{
+  background-color: #1a1a1a;
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+  border-left: 3px solid #d4af37;
+}
+
+.why article h3{
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* attempt at membership section */
+.membership-preview {
+  text-align: center;
+  padding: 40px 0;
+  /* added padding */
+}
+
+.membership-preview h2 {
+  margin-bottom: 30px;
+}
+
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.plan-money {
+  background-color: #222;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 220px;
+  border: 2px solid #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+/* when hovering over plans */
+  transition: all 0.2s;
+}
+
+.plan-money:hover {
+  border-color: #d4af37;
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.2);
+}
+
+.plan-money.featured {
+  background-color: #d4af37;
+  color: black;
+  border: 2px solid #ffd700;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.plan-money.featured h3 {
+  color: black;
+}
+
+.plan-money.featured .price {
+  color: black;
+}
+
+.plan-money h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+}
+
+.plan-money .price {
+  color: #d4af37;
+  font-size: 2rem;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.plan-money a {
+  text-decoration: none;
+  color: black;
+  background-color: #d4af37;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.plan-money a:hover {
+  background-color: #ffd700;
+}
+
+/* footer - different styling */.plan-money a:hover {
+  background-color: #ffd700;
+}
+
+footer {
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+  border-top: 3px solid #d4af37;
+  color: #f5f5f5;
+  padding: 50px 40px 30px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: flex;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-brand, .footer-links, .footer-contact {
+  flex: 1;
+  min-width: 220px;
+  /* try wrap */
+}
+
+/* footer section headings - gold colored */
+.footer-brand h3, .footer-links h4, .footer-contact h4 {
+  color: #d4af37;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-brand p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* test */
+}
+
+.footer-links ul li {
+  margin: 12px 0;
+  padding: 5px;
+}
+
+/* link styles in footer */
+.footer-links a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* hover effects */
+.footer-links a:hover {
+  color: #d4af37;
+}
+
+.footer-contact p {
+  color: #ccc;
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.back-to-top {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-to-top:hover {
+  color: #ffd700;
+}
+
+/* UNUSED - tried this but didnt use */
+.title {
+  font-size: 3rem;
+  color: #d4af37;
+}
+
+/* global font attempt */
+* {
+  font-family: Arial;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
-}
-.plan-money{
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-}
-.plan-money.featured{
-    background-color: #ffcc00;
-}
-.plan-money h3{
-    margin-bottom: 10px;
-}
-.plan-money .price{
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.plan-money a{
-    text-decoration: none;
-    color: white;
-    background-color: #007bff;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-.plan-money a:hover{
-    background-color: #0056b3;
-}
+  }
 
+  .welcome_section {
+    flex-direction: column;
+  }
 
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* smaller text on mobile */
+  .plan-money .price {
+    font-size: 1.5rem;
+  }
+}
