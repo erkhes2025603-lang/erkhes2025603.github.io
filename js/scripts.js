@@ -24,19 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // Join Button Interaction
-    const buttons = document.querySelectorAll(".button-primary");
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const name = prompt("Enter your name to join:");
-
-            if (name) {
-                alert("Welcome to DevScript Gym, " + name + " 💪");
-            }
-        });
-    });
-
 
     // Animated Stats Counter
     const stats = document.querySelectorAll(".stat strong");
@@ -219,4 +206,64 @@ themeBtn.addEventListener("click", () => {
     }
 });
 
+// Registration Table
+const regForm = document.getElementById("registrationForm");
+const tableBody = document.querySelector("#userTable tbody");
+
+// Load saved users on page load
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+// Function to render table
+function renderTable() {
+    tableBody.innerHTML = "";
+
+    users.forEach((user, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.age}</td>
+            <td>${user.plan}</td>
+            <td><button class="delete-btn">Cancel Subscription</button></td>
+        `;
+
+        // Delete button
+        row.querySelector(".delete-btn").addEventListener("click", () => {
+            users.splice(index, 1);
+            localStorage.setItem("users", JSON.stringify(users));
+            renderTable();
+        });
+
+        tableBody.appendChild(row);
+    });
+}
+
+// Initial load
+renderTable();
+
+// Handle form submit
+regForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const age = document.getElementById("age").value.trim();
+    const plan = document.getElementById("plan").value;
+
+    if (!name || !email || !age || !plan) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    const newUser = { name, email, age, plan };
+
+    users.push(newUser);
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    renderTable();
+
+    regForm.reset();
+});
 });

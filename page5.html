@@ -24,9 +24,39 @@
     </header>
 
 <main>
-    <h1>add your stuffffffffffff</h1>
-</main>
+<form id="registrationForm">
+    <h2>Join the Gym</h2>
 
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="number" id="age" placeholder="Age" required>
+
+    <select id="plan" required>
+        <option value="">Select Plan</option>
+        <option>Wet Noodle</option>
+        <option>Half Rep Hero</option>
+        <option>Barbell Handler</option>
+        <option>Apex Lifter</option>
+    </select>
+
+    <button type="submit">Register</button>
+</form>
+
+</main>
+<table id="userTable" border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Plan</th>
+            <th>Action</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 <footer>
       <div class="footer-grid">
         <div class="footer-brand">
