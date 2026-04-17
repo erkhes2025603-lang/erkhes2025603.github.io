@@ -111,32 +111,6 @@ links.forEach(link => {
 });
 
 
-    // Form Validation
-    const form = document.querySelector("form");
-
-    if (form) {
-        form.addEventListener("submit", function(e) {
-            const inputs = form.querySelectorAll("input, textarea");
-            let valid = true;
-
-            inputs.forEach(input => {
-                if (input.value.trim() === "") {
-                    input.style.border = "2px solid red";
-                    valid = false;
-                } else {
-                    input.style.border = "1px solid #ccc";
-                }
-            });
-
-            if (!valid) {
-                e.preventDefault();
-                alert("Please fill in all fields properly");
-            } else {
-                alert("Form submitted successfully 💪");
-            }
-        });
-    }
-
 
     // Back to Top Button
     const backToTop = document.createElement("button");
@@ -206,64 +180,51 @@ themeBtn.addEventListener("click", () => {
     }
 });
 
-// Registration Table
+
 const regForm = document.getElementById("registrationForm");
-const tableBody = document.querySelector("#userTable tbody");
 
-// Load saved users on page load
-let users = JSON.parse(localStorage.getItem("users")) || [];
+if (regForm) {
+    regForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-// Function to render table
-function renderTable() {
-    tableBody.innerHTML = "";
+        const name = document.getElementById("name").value.trim();
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const age = document.getElementById("age").value.trim();
+        const weight = document.getElementById("weight").value.trim();
+        const plan = document.getElementById("plan").value;
 
-    users.forEach((user, index) => {
-        const row = document.createElement("tr");
+        const gender = document.querySelector('input[name="gender"]:checked')?.value;
 
-        row.innerHTML = `
-            <td>${user.name}</td>
-            <td>${user.email}</td>
-            <td>${user.age}</td>
-            <td>${user.plan}</td>
-            <td><button class="delete-btn">Cancel Subscription</button></td>
-        `;
-
-        // Delete button
-        row.querySelector(".delete-btn").addEventListener("click", () => {
-            users.splice(index, 1);
-            localStorage.setItem("users", JSON.stringify(users));
-            renderTable();
+        const goals = [];
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+            goals.push(cb.value);
         });
 
-        tableBody.appendChild(row);
+        if (!name || !email || !age || !plan || !gender || !weight || !username) {
+            alert("Please fill all required fields");
+            return;
+        }
+        if (goals.length === 0) {
+            document.getElementById("goalsGroup").style.border = "2px solid red";
+            return;
+        }
+
+        console.log({
+            name,
+            username,
+            email,
+            age,
+            weight,
+            plan,
+            gender,
+            goals,
+            notes
+        });
+
+        alert("Registration successful 💪");
+
+        regForm.reset();
     });
 }
-
-// Initial load
-renderTable();
-
-// Handle form submit
-regForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const age = document.getElementById("age").value.trim();
-    const plan = document.getElementById("plan").value;
-
-    if (!name || !email || !age || !plan) {
-        alert("Please fill all fields");
-        return;
-    }
-
-    const newUser = { name, email, age, plan };
-
-    users.push(newUser);
-
-    localStorage.setItem("users", JSON.stringify(users));
-
-    renderTable();
-
-    regForm.reset();
-});
 });

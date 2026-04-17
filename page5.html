@@ -25,38 +25,55 @@
 
 <main>
 <form id="registrationForm">
-    <h2>Join the Gym</h2>
 
+    <h2>Gym Registration</h2>
+
+    <!-- Text inputs -->
     <input type="text" id="name" placeholder="Full Name" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="number" id="age" placeholder="Age" required>
+    <input type="text" id="username" placeholder="Username" required>
 
+    <!-- Email -->
+    <input type="email" id="email" placeholder="Email" required>
+
+    <!-- Numeric inputs -->
+    <input type="number" id="age" placeholder="Age" required>
+    <input type="number" id="weight" placeholder="Weight (kg)" required>
+
+    <!-- Radio group -->
+    <p>Gender:</p>
+    <div id="genderGroup">
+    <label><input type="radio" name="gender" value="Male"> Male</label>
+    <label><input type="radio" name="gender" value="Female"> Female</label>
+    <label><input type="radio" name="gender" value="Other"> Other</label>
+    </div>
+
+    <!-- Checkbox group -->
+    <p>Goals:</p>
+    <div id="goalsGroup">
+    <label><input type="checkbox" value="Lose Weight"> Lose Weight</label>
+    <label><input type="checkbox" value="Build Muscle"> Build Muscle</label>
+    <label><input type="checkbox" value="Stay Fit"> Stay Fit</label>
+    </div>
+
+    <!-- Select dropdown -->
     <select id="plan" required>
         <option value="">Select Plan</option>
-        <option>Wet Noodle</option>
-        <option>Half Rep Hero</option>
-        <option>Barbell Handler</option>
-        <option>Apex Lifter</option>
+        <option>1 month</option>
+        <option>3 months</option>
+        <option>6 months</option>
+        <option>1 year</option>
     </select>
 
+    <!-- Textarea -->
+    <textarea id="notes" placeholder="Any additional notes..."></textarea>
+
+    <!-- Buttons -->
     <button type="submit">Register</button>
+    <button type="reset">Reset</button>
+
 </form>
 
 </main>
-<table id="userTable" border="1">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Age</th>
-            <th>Plan</th>
-            <th>Action</th>
-            
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
 <footer>
       <div class="footer-grid">
         <div class="footer-brand">
