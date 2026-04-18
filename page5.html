@@ -6,6 +6,7 @@
     <title>Fitness</title>
 
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js"></script>
 </head>
 <body id="top">
     <header>
@@ -23,9 +24,56 @@
     </header>
 
 <main>
-    <h1>add your stuffffffffffff</h1>
-</main>
+<form id="registrationForm">
 
+    <h2>Gym Registration</h2>
+
+    <!-- Text inputs -->
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="username" placeholder="Username" required>
+
+    <!-- Email -->
+    <input type="email" id="email" placeholder="Email" required>
+
+    <!-- Numeric inputs -->
+    <input type="number" id="age" placeholder="Age" required>
+    <input type="number" id="weight" placeholder="Weight (kg)" required>
+
+    <!-- Radio group -->
+    <p>Gender:</p>
+    <div id="genderGroup">
+    <label><input type="radio" name="gender" value="Male"> Male</label>
+    <label><input type="radio" name="gender" value="Female"> Female</label>
+    <label><input type="radio" name="gender" value="Other"> Other</label>
+    </div>
+
+    <!-- Checkbox group -->
+    <p>Goals:</p>
+    <div id="goalsGroup">
+    <label><input type="checkbox" value="Lose Weight"> Lose Weight</label>
+    <label><input type="checkbox" value="Build Muscle"> Build Muscle</label>
+    <label><input type="checkbox" value="Stay Fit"> Stay Fit</label>
+    </div>
+
+    <!-- Select dropdown -->
+    <select id="plan" required>
+        <option value="">Select Plan</option>
+        <option>1 month</option>
+        <option>3 months</option>
+        <option>6 months</option>
+        <option>1 year</option>
+    </select>
+
+    <!-- Textarea -->
+    <textarea id="notes" placeholder="Any additional notes..."></textarea>
+
+    <!-- Buttons -->
+    <button type="submit">Register</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+</main>
 <footer>
       <div class="footer-grid">
         <div class="footer-brand">
@@ -53,9 +101,7 @@
 
       <div class="footer-bottom">
         <p>&copy; 2026 DevStrength Gym. All Rights Reserved.</p>
-        <a href="#top" class="back-to-top">&#8593; Back to Top</a>
       </div>
     </footer>
-    <script src="js/scripts.js"></script>
 </body>
 </html>
