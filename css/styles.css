@@ -48,13 +48,11 @@ body.light-mode .why article {
 body.light-mode nav {
     background: #ffffff;
 }
-
 /* Buttons */
 body.light-mode .button-primary {
     background: #ff4d4d;
     color: white;
 }
-
 body, section, nav, footer, .plan-money, .why article {
     transition: all 0.3s ease;
 }
@@ -73,7 +71,6 @@ body.light-mode footer {
     transform: translateY(40px);
     transition: 0.6s ease;
 }
-
 .welcome-content.show,
 .stat.show,
 .plan-money.show,
@@ -81,7 +78,6 @@ body.light-mode footer {
     opacity: 1;
     transform: translateY(0);
 }
-
 /* header styles */
 header {
   background-color: #000;
@@ -91,7 +87,6 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
 .logo h1{
   color: #d4af37;
   font-size: 2rem;
@@ -404,30 +399,24 @@ body.light-mode footer a:hover {
 body.light-mode .footer-bottom {
     border-top: 1px solid #ccc;
 }
-
-label {
+label{
     font-size: 14px;
 }
-
-form p {
+form p{
     margin-bottom: 5px;
     margin-top: 10px;
 }
-
-form label {
+form label{
     display: inline-flex;
     align-items: center;
     gap: 5px;
     margin-right: 15px;
     margin-bottom: 5px;
 }
-
 form input[type="radio"],
 form input[type="checkbox"] {
     margin: 0;
 }
-
-
 /* Cancel button */
 .cancel-btn {
     background: #ff4d4d;
@@ -442,7 +431,6 @@ form input[type="checkbox"] {
 .cancel-btn:hover {
     background: #e60000;
 }
-
 .plan-money {
   background-color: #222;
   padding: 30px 20px;
@@ -454,7 +442,6 @@ form input[type="checkbox"] {
 /* when hovering over plans */
   transition: all 0.2s;
 }
-
 .plan-money:hover {
   border-color: #d4af37;
   box-shadow: 0 6px 15px rgba(212, 175, 55, 0.2);
@@ -526,8 +513,7 @@ footer {
   min-width: 220px;
   /* try wrap */
 }
-
-/* footer section headings - gold colored */
+/* footer section headingsgold colored */
 .footer-brand h3, .footer-links h4, .footer-contact h4 {
   color: #d4af37;
   margin-bottom: 15px;
