@@ -70,22 +70,42 @@
             </div>
 
             <!-- PLAN -->
-            <div class="form-section">
-                <h3>Membership Plan</h3>
-                <select id="plan" required>
-                    <option value="">Select Plan</option>
-                    <option>1 month</option>
-                    <option>3 months</option>
-                    <option>6 months</option>
-                    <option>1 year</option>
-                </select>
-            </div>
+            <!-- Membership Plan -->
+<div class="form-section">
+    <h2>Membership Plan</h2>
 
-            <!-- NOTES -->
-            <div class="form-section">
-                <h3>Additional Notes</h3>
-                <textarea id="notes" placeholder="Any additional notes..."></textarea>
-            </div>
+    <div class="plan-options">
+        <label class="plan-card">
+            <input type="radio" name="plan" value="1 month" required>
+            <span class="plan-title">1 Month</span>
+            <span class="plan-price">$1000</span>
+        </label>
+
+        <label class="plan-card">
+            <input type="radio" name="plan" value="3 months">
+            <span class="plan-title">3 Months</span>
+            <span class="plan-price">$2500</span>
+        </label>
+
+        <label class="plan-card">
+            <input type="radio" name="plan" value="6 months">
+            <span class="plan-title">6 Months</span>
+            <span class="plan-price">$5000</span>
+        </label>
+
+        <label class="plan-card">
+            <input type="radio" name="plan" value="1 year">
+            <span class="plan-title">1 Year</span>
+            <span class="plan-price">$10000</span>
+        </label>
+    </div>
+</div>
+
+<!-- Additional Notes -->
+<div class="form-section">
+    <h2>Additional Notes</h2>
+    <textarea id="notes" placeholder="Any additional notes..."></textarea>
+</div>
 
             <!-- BUTTONS -->
             <button type="submit">Register</button>
