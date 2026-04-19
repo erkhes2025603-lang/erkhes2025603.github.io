@@ -119,7 +119,6 @@ nav a:hover{
   transition: all 0.3s;
 }
 
-/* trying different approach */
 h1{
   color: #d4af37;
   font-size: 2rem;
@@ -247,10 +246,13 @@ body.fade-out {
 }
 
 .stat {
-  background-color: #222;
   padding: 20px;
-  border-left: 3px solid #d4af37;
+  border-radius: 10px;
   text-align: center;
+  transition: 0.2s;
+
+  background-color: #222;
+  border-left: 4px solid #d4af37;
 }
 
 .stat strong {
@@ -263,7 +265,230 @@ body.fade-out {
 .stat span {
   color: #ccc;
   font-size: 0.9rem;
-  margin-bottom: 10px;
+}
+
+.featured,
+.apex {
+    background: linear-gradient(135deg, #111, #1a1a1a);
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.featured h3,
+.apex h3 {
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+
+.featured h2,
+.featured .price {
+    color: #d4af37;
+    font-size: 2.3rem;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+.featured p {
+    color: #ccc;
+}
+
+.featured button {
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.featured button:hover {
+    background: #c19b2e;
+    transform: scale(1.05);
+}
+
+.featured:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.3);
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 16px;          
+    font-size: 18px;        
+    border-radius: 10px;    
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;          
+    margin-right: 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+    transform: scale(1.2);
+}
+
+body:not(.light-mode) .form-group {
+    background: #1a1a1a;
+    border: 1px solid #333;
+}
+
+body:not(.light-mode) .form-group p,
+body:not(.light-mode) .form-group label {
+    color: #ddd;
+}
+
+
+
+form button[type="submit"] {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+form button[type="submit"]:hover {
+    background: #e60000;
+    transform: translateY(-3px) scale(1.02);
+}
+
+form label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.form-group {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+a, button, .plan, .stat {
+    transition: all 0.25s ease;
+}
+
+body.light-mode .featured:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-color: #ff4d4d;
+}
+
+body:not(.light-mode) .featured h2,
+body:not(.light-mode) .featured h3,
+body:not(.light-mode) .featured .price,
+body:not(.light-mode) .featured strong {
+    color: #d4af37;
+}
+
+body:not(.light-mode) .featured p,
+body:not(.light-mode) .featured span {
+    color: #ccc;
+}
+
+body.light-mode .featured,
+body.light-mode .apex {
+    background: linear-gradient(135deg, #fff7e6, #ffffff);
+    border: 2px solid #d4af37;
+    color: #222;
+}
+
+body.light-mode .featured h3,
+body.light-mode .apex h3 {
+    color: #d4af37;
+}
+
+body.light-mode .featured h2,
+body.light-mode .featured .price,
+body.light-mode .featured strong {
+    color: #d4af37; 
+    font-weight: bold;
+}
+
+body.light-mode .featured strong,
+body.light-mode .apex strong {
+    color: #d4af37;
+}
+
+body.light-mode .stat {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-left: 4px solid #ff4d4d;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+body.light-mode .stat strong {
+  color: #ff4d4d;
+}
+
+body.light-mode .stat span {
+  color: #333;
+}
+
+body.light-mode footer a {
+    color: #111 !important;
+    background: none !important;
+}
+
+body.light-mode footer a:hover {
+    color: #ff4d4d !important;
+}
+
+
+body.light-mode .stat {
+  background-color: #f5f5f5;
+  border-left: 3px solid #ff4d4d;
+}
+
+body.light-mode .stat strong {
+  color: #ff4d4d;
+}
+
+body.light-mode .stat span {
+  color: #333;
 }
 
 .why_us{
@@ -301,7 +526,6 @@ body.fade-out {
   margin-bottom: 10px;
 }
 
-/* attempt at membership section */
 .membership-preview {
   text-align: center;
   padding: 40px 0;
@@ -323,11 +547,109 @@ body.fade-out {
 }
 
 form {
+    width: 100%;
+    margin: 30px auto;
+}
+
+#registrationForm h2,
+#registrationForm button,
+#registrationForm textarea,
+#registrationForm select {
+    grid-column: span 2;
+}
+
+
+/* FORM CONTAINER */
+form {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* GRID LAYOUT */
+#registrationForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* FULL WIDTH ELEMENTS */
+#registrationForm h2,
+#registrationForm button,
+#registrationForm textarea,
+#registrationForm select {
+    grid-column: span 2;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input {
+    flex: 1;
+    min-width: 0; 
+}
+
+/* SECTION BOX */
+.form-section {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+/* INPUT ROW */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+/* INPUTS */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* OPTIONS (gender + goals) */
+.options {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 320px;
-    margin: 30px auto;
+}
+
+/* LABELS */
+form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* BUTTON */
+form button {
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background: #ff4d4d;
+    color: white;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    #registrationForm {
+        grid-template-columns: 1fr;
+    }
 }
 
 body.light-mode p,
@@ -356,28 +678,22 @@ body.light-mode .logo p {
     color: #111;
 }
 
-/* Nav links */
 body.light-mode nav a {
     color: #111;
 }
 
-/* Nav hover */
 body.light-mode nav a:hover {
     color: #ff4d4d;
 }
-
-/* Remove dark overlays */
 body.light-mode header * {
     background: transparent;
 }
 
-/* Footer background */
 body.light-mode footer {
     background: #f9f9f9;
     color: #111;
 }
 
-/* All footer text */
 body.light-mode footer p,
 body.light-mode footer h3,
 body.light-mode footer h4,
@@ -385,7 +701,6 @@ body.light-mode footer li {
     color: #111;
 }
 
-/* Links */
 body.light-mode footer a {
     color: #111;
     text-decoration: none;
@@ -395,7 +710,6 @@ body.light-mode footer a:hover {
     color: #ff4d4d;
 }
 
-/* Bottom section */
 body.light-mode .footer-bottom {
     border-top: 1px solid #ccc;
 }
@@ -417,7 +731,6 @@ form input[type="radio"],
 form input[type="checkbox"] {
     margin: 0;
 }
-/* Cancel button */
 .cancel-btn {
     background: #ff4d4d;
     color: white;
@@ -439,7 +752,6 @@ form input[type="checkbox"] {
   width: 220px;
   border: 2px solid #333;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-/* when hovering over plans */
   transition: all 0.2s;
 }
 .plan-money:hover {
@@ -483,11 +795,49 @@ form input[type="checkbox"] {
   cursor: pointer;
 }
 
+body.light-mode nav a,
+body.light-mode a,
+body.light-mode button,
+body.light-mode .button-primary {
+    background-color: #ff4d4d !important;
+    color: white !important;
+    border: none !important;
+}
+
+
+
 .plan-money a:hover {
   background-color: #ffd700;
 }
 
-/* footer - different styling */.plan-money a:hover {
+body.light-mode a.button-primary,
+body.light-mode .button-primary {
+    background: #ff4d4d !important;
+    color: white !important;
+}
+
+body.light-mode nav a {
+    color: #111;
+}
+
+body.light-mode nav a:hover,
+body.light-mode nav a.active {
+    color: #ff4d4d;
+}
+
+body.light-mode .button-primary,
+body.light-mode button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+}
+
+body.light-mode .button-primary:hover,
+body.light-mode button:hover {
+    background: #e60000;
+}
+
+ .plan-money a:hover {
   background-color: #ffd700;
 }
 
@@ -511,7 +861,6 @@ footer {
 .footer-brand, .footer-links, .footer-contact {
   flex: 1;
   min-width: 220px;
-  /* try wrap */
 }
 /* footer section headingsgold colored */
 .footer-brand h3, .footer-links h4, .footer-contact h4 {

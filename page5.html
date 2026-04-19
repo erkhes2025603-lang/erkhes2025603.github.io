@@ -22,58 +22,80 @@
             <a href="page5.html">Register</a>
         </nav>
     </header>
-
 <main>
-<form id="registrationForm">
+    <div class="form-container">
+        <form id="registrationForm">
 
-    <h2>Gym Registration</h2>
+            <h2>Gym Registration</h2>
 
-    <!-- Text inputs -->
-    <input type="text" id="name" placeholder="Full Name" required>
-    <input type="text" id="username" placeholder="Username" required>
+            <!-- PERSONAL INFO -->
+            <div class="form-section">
+                <h3>Personal Info</h3>
+                <div class="form-row">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-row">
+                  <input type="email" id="email" placeholder="Email" required>
+                </div>
+            </div>
 
-    <!-- Email -->
-    <input type="email" id="email" placeholder="Email" required>
+            <!-- BODY INFO -->
+            <div class="form-section">
+                <h3>Body Info</h3>
+                <div class="form-row">
+                    <input type="number" id="age" placeholder="Age" required>
+                    <input type="number" id="weight" placeholder="Weight (kg)" required>
+                </div>
+            </div>
 
-    <!-- Numeric inputs -->
-    <input type="number" id="age" placeholder="Age" required>
-    <input type="number" id="weight" placeholder="Weight (kg)" required>
+            <!-- GENDER -->
+            <div class="form-section">
+                <h3>Gender</h3>
+                <div class="options">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+            </div>
 
-    <!-- Radio group -->
-    <p>Gender:</p>
-    <div id="genderGroup">
-    <label><input type="radio" name="gender" value="Male"> Male</label>
-    <label><input type="radio" name="gender" value="Female"> Female</label>
-    <label><input type="radio" name="gender" value="Other"> Other</label>
+            <!-- GOALS -->
+            <div class="form-section">
+                <h3>Goals</h3>
+                <div class="options">
+                    <label><input type="checkbox" value="Lose Weight"> Lose Weight</label>
+                    <label><input type="checkbox" value="Build Muscle"> Build Muscle</label>
+                    <label><input type="checkbox" value="Stay Fit"> Stay Fit</label>
+                </div>
+            </div>
+
+            <!-- PLAN -->
+            <div class="form-section">
+                <h3>Membership Plan</h3>
+                <select id="plan" required>
+                    <option value="">Select Plan</option>
+                    <option>1 month</option>
+                    <option>3 months</option>
+                    <option>6 months</option>
+                    <option>1 year</option>
+                </select>
+            </div>
+
+            <!-- NOTES -->
+            <div class="form-section">
+                <h3>Additional Notes</h3>
+                <textarea id="notes" placeholder="Any additional notes..."></textarea>
+            </div>
+
+            <!-- BUTTONS -->
+            <button type="submit">Register</button>
+            <button type="reset">Reset</button>
+
+        </form>
     </div>
-
-    <!-- Checkbox group -->
-    <p>Goals:</p>
-    <div id="goalsGroup">
-    <label><input type="checkbox" value="Lose Weight"> Lose Weight</label>
-    <label><input type="checkbox" value="Build Muscle"> Build Muscle</label>
-    <label><input type="checkbox" value="Stay Fit"> Stay Fit</label>
-    </div>
-
-    <!-- Select dropdown -->
-    <select id="plan" required>
-        <option value="">Select Plan</option>
-        <option>1 month</option>
-        <option>3 months</option>
-        <option>6 months</option>
-        <option>1 year</option>
-    </select>
-
-    <!-- Textarea -->
-    <textarea id="notes" placeholder="Any additional notes..."></textarea>
-
-    <!-- Buttons -->
-    <button type="submit">Register</button>
-    <button type="reset">Reset</button>
-
-</form>
-
 </main>
+
+
 <footer>
       <div class="footer-grid">
         <div class="footer-brand">
