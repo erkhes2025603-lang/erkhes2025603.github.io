@@ -181,49 +181,37 @@ themeBtn.addEventListener("click", () => {
 });
 
 
-const regForm = document.getElementById("registrationForm");
+    const regForm = document.getElementById("registrationForm");
 
 if (regForm) {
-    regForm.addEventListener("submit", function(e) {
+    regForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const username = document.getElementById("username").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const age = document.getElementById("age").value.trim();
-        const weight = document.getElementById("weight").value.trim();
-        const plan = document.getElementById("plan").value;
+        console.log("FORM SUBMIT TRIGGERED");
 
+        const name = document.getElementById("name")?.value.trim();
+        const username = document.getElementById("username")?.value.trim();
+        const email = document.getElementById("email")?.value.trim();
+        const age = document.getElementById("age")?.value.trim();
+        const weight = document.getElementById("weight")?.value.trim();
+
+        const plan = document.querySelector('input[name="plan"]:checked')?.value;
         const gender = document.querySelector('input[name="gender"]:checked')?.value;
 
         const goals = [];
-        document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
-            goals.push(cb.value);
-        });
+        document.querySelectorAll('input[type="checkbox"]:checked')
+            .forEach(cb => goals.push(cb.value));
 
-        if (!name || !email || !age || !plan || !gender || !weight || !username) {
-            alert("Please fill all required fields");
-            return;
-        }
-        if (goals.length === 0) {
-            document.getElementById("goalsGroup").style.border = "2px solid red";
-            return;
-        }
-
-        console.log({
-            name,
-            username,
-            email,
-            age,
-            weight,
-            plan,
-            gender,
-            goals,
-            notes
-        });
+        if (!name) return alert("Missing name");
+        if (!username) return alert("Missing username");
+        if (!email) return alert("Missing email");
+        if (!age) return alert("Missing age");
+        if (!weight) return alert("Missing weight");
+        if (!plan) return alert("Select plan");
+        if (!gender) return alert("Select gender");
+        if (goals.length === 0) return alert("Select at least one goal");
 
         alert("Registration successful 💪");
-
         regForm.reset();
     });
 }
