@@ -1305,3 +1305,87 @@ body {
     text-transform: uppercase;
     font-weight: bold;
 }
+/* ===== FACILITIES SECTION ===== */
+
+.facilities {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.facilities h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.facilities p {
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.facility-card {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* IMAGE */
+.facility-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* TEXT */
+.facility-card h3 {
+    margin: 15px 0 5px;
+    color: #f7b500;
+}
+
+.facility-card p {
+    color: #ccc;
+    font-size: 14px;
+    padding: 0 15px 20px;
+    transition: 0.3s;
+}
+
+/* 🔥 HOVER EFFECT */
+.facility-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.facility-card:hover img {
+    transform: scale(1.1);
+}
+
+/* 🔥 BORDER GLOW */
+.facility-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.facility-card:hover::before {
+    border: 2px solid #f7b500;
+}
+
+/* TEXT ANIMATION */
+.facility-card:hover h3 {
+    transform: translateY(-3px);
+}
+
+.facility-card:hover p {
+    color: #fff;
+}
