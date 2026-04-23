@@ -22,9 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             link.style.fontWeight = "bold";
         }
     });
-
-
-
     // Animated Stats Counter
     const stats = document.querySelectorAll(".stat strong");
 
@@ -72,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         statsObserver.observe(statsSection);
     }
 
-
     // Scroll Reveal 
     const revealElements = document.querySelectorAll(
     ".welcome-content, .stat, .plan-money, .why article"
@@ -109,9 +105,6 @@ links.forEach(link => {
         });
     }
 });
-
-
-
     // Back to Top Button
     const backToTop = document.createElement("button");
 
@@ -144,9 +137,7 @@ links.forEach(link => {
             behavior: "smooth"
         });
     });
-
-
-
+    
 // Light Dark mode toggler
 const themeBtn = document.createElement("button");
 
@@ -161,7 +152,6 @@ themeBtn.style.borderRadius = "8px";
 themeBtn.style.cursor = "pointer";
 
 document.body.appendChild(themeBtn);
-
 // Load saved mode
 if (localStorage.getItem("theme") === "light") {
     document.body.classList.add("light-mode");
