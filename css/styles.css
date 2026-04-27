@@ -1441,10 +1441,34 @@ body {
 }
 
 /* TEXT ANIMATION */
+
 .facility-card:hover h3 {
     transform: translateY(-3px);
 }
 
 .facility-card:hover p {
     color: #fff;
+}
+.details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.facility-card.active .details {
+    max-height: 200px; /* enough to show content */
+}
+summary {
+    padding: 10px;
+}
+
+.facility-card[open] summary {
+    background-color: #1e293b;
+}
+.facility-card ul {
+    list-style: none;   
+}
+
+.facility-card li {
+    margin-bottom: 5px;
 }
