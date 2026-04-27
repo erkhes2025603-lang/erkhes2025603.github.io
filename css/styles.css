@@ -13,6 +13,30 @@ body {
   line-height: 1.6;
 }
 
+/* RESULT PAGE TABLE */
+
+#dataTable {
+    margin: 40px auto;
+    border-collapse: collapse;
+    width: 60%;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+#dataTable th,
+#dataTable td {
+    padding: 12px;
+    border: 1px solid #333;
+}
+
+#dataTable th {
+    background-color: #ff4d4d;
+}
+
+#dataTable tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
 /* Reveal animation /for js/*/
 .stat, .card, .trainer, .hero-text {
     opacity: 0;
@@ -22,6 +46,18 @@ body {
 .show{
     opacity: 1;
     transform: translateY(0);
+}
+
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* LIGHT MODE (for js)*/

@@ -4,61 +4,7 @@
     <meta charset="UTF-8">
     <title>Registration Result</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js"></script>
 
-    <style>
-    body {
-        background-color: #0f0f0f; 
-        color: #ffffff; 
-        text-align: center;
-        font-family: Arial, sans-serif;
-    }
-
-    h2 {
-        margin-top: 40px;
-    }
-
-    table {
-        margin: 40px auto;
-        border-collapse: collapse;
-        width: 60%;
-        background-color: #1a1a1a;
-        color: white;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    th, td {
-        padding: 12px;
-        border: 1px solid #333;
-    }
-
-    th {
-        background-color: #ff4d4d;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #2a2a2a;
-    }
-
-    tr:hover {
-        background-color: #333;
-    }
-
-    button {
-        padding: 10px 20px;
-        background-color: #ff4d4d;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #e63c3c;
-    }
-</style>
 </head>
 
 <body>
@@ -68,42 +14,8 @@
     <!-- TABLE -->
     <table id="dataTable"></table>
 
-    <script>
-        // GET DATA FROM STORAGE
-        const data = JSON.parse(localStorage.getItem("gymData"));
-
-        const table = document.getElementById("dataTable");
-
-        // CREATE HEADER (2 COLUMNS)
-        const headerRow = document.createElement("tr");
-
-        const th1 = document.createElement("th");
-        th1.textContent = "Field";
-
-        const th2 = document.createElement("th");
-        th2.textContent = "Value";
-
-        headerRow.appendChild(th1);
-        headerRow.appendChild(th2);
-        table.appendChild(headerRow);
-
-        // LOOP THROUGH DATA OBJECT
-        for (let key in data) {
-
-            const row = document.createElement("tr");
-
-            const cell1 = document.createElement("td");
-            const cell2 = document.createElement("td");
-
-            cell1.textContent = key;
-            cell2.textContent = data[key];
-
-            row.appendChild(cell1);
-            row.appendChild(cell2);
-
-            table.appendChild(row);
-        }
-    </script>
+    
+<script src="js/scripts.js"></script>
 
 </body>
 </html>

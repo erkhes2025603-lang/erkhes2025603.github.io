@@ -250,4 +250,49 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Form reset");
         });
     }
+
+// RESULT PAGE TABLE GENERATION
+const table = document.getElementById("dataTable");
+
+if (table) {
+
+    // Get stored data
+    const data = JSON.parse(localStorage.getItem("gymData"));
+
+    // CONDITIONAL 
+    if (!data) {
+        table.innerHTML = "<tr><td>No data found</td></tr>";
+        return;
+    }
+
+    // CREATE HEADER (2 COLUMNS)
+    const headerRow = document.createElement("tr");
+
+    const th1 = document.createElement("th");
+    th1.textContent = "Field";
+
+    const th2 = document.createElement("th");
+    th2.textContent = "Value";
+
+    headerRow.appendChild(th1);
+    headerRow.appendChild(th2);
+    table.appendChild(headerRow);
+
+    // LOOP THROUGH DATA
+    for (let key in data) {
+
+        const row = document.createElement("tr");
+
+        const cell1 = document.createElement("td");
+        const cell2 = document.createElement("td");
+
+        cell1.textContent = key;
+        cell2.textContent = data[key];
+
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+
+        table.appendChild(row);
+    }
+}
 });
