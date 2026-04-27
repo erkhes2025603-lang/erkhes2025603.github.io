@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Registration Result</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js"></script>
 
     <style>
     body {
@@ -68,16 +69,12 @@
     <table id="dataTable"></table>
 
     <script>
-        // ==========================
         // GET DATA FROM STORAGE
-        // ==========================
         const data = JSON.parse(localStorage.getItem("gymData"));
 
         const table = document.getElementById("dataTable");
 
-        // ==========================
         // CREATE HEADER (2 COLUMNS)
-        // ==========================
         const headerRow = document.createElement("tr");
 
         const th1 = document.createElement("th");
@@ -90,9 +87,7 @@
         headerRow.appendChild(th2);
         table.appendChild(headerRow);
 
-        // ==========================
         // LOOP THROUGH DATA OBJECT
-        // ==========================
         for (let key in data) {
 
             const row = document.createElement("tr");
