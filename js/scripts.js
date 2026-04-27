@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Smooth Scrolling
+    // SMOOTH SCROLLING (EVENT LISTENERS)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             e.preventDefault();
@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-
-    // Highlight Active Nav Link
+    // ACTIVE NAV LINK HIGHLIGHT
     const navLinks = document.querySelectorAll("nav a");
 
     navLinks.forEach(link => {
@@ -22,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
             link.style.fontWeight = "bold";
         }
     });
-    // Animated Stats Counter
+
+    // ANIMATED STATS COUNTER
     const stats = document.querySelectorAll(".stat strong");
 
     const animateStats = () => {
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Trigger stats when visible
     const statsSection = document.querySelector(".welcome-stats");
 
     if (statsSection) {
@@ -69,43 +68,44 @@ document.addEventListener("DOMContentLoaded", () => {
         statsObserver.observe(statsSection);
     }
 
-    // Scroll Reveal 
+    // SCROLL REVEAL
     const revealElements = document.querySelectorAll(
-    ".welcome-content, .stat, .plan-money, .why article"
-);
+        ".welcome-content, .stat, .plan-money, .why article"
+    );
 
     const revealOnScroll = () => {
-    revealElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
 
-        if (rect.top < window.innerHeight - 100) {
-            el.classList.add("show");
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("show");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    // PAGE TRANSITION
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+        if (link.hostname === window.location.hostname && !link.href.includes("#")) {
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+
+                const url = this.href;
+
+                document.body.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 250);
+            });
         }
     });
-};
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-// Page Transition Animation
-const links = document.querySelectorAll("a[href]");
-
-links.forEach(link => {
-    if (link.hostname === window.location.hostname && !link.href.includes("#")) {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-
-            const url = this.href;
-
-            document.body.classList.add("fade-out");
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 250); 
-        });
-    }
-});
-    // Back to Top Button
+    // BACK TO TOP BUTTON
     const backToTop = document.createElement("button");
 
     backToTop.innerText = "↑";
@@ -137,72 +137,117 @@ links.forEach(link => {
             behavior: "smooth"
         });
     });
-    
-// Light Dark mode toggler
-const themeBtn = document.createElement("button");
 
-themeBtn.innerText = "☀️";
-themeBtn.style.position = "fixed";
-themeBtn.style.top = "150px";
-themeBtn.style.right = "20px";
-themeBtn.style.bottom = "auto";
-themeBtn.style.padding = "10px";
-themeBtn.style.border = "none";
-themeBtn.style.borderRadius = "8px";
-themeBtn.style.cursor = "pointer";
+    // LIGHT / DARK MODE
+    const themeBtn = document.createElement("button");
 
-document.body.appendChild(themeBtn);
-// Load saved mode
-if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-mode");
-    themeBtn.innerText = "🌙";
-}
+    themeBtn.innerText = "☀️";
+    themeBtn.style.position = "fixed";
+    themeBtn.style.top = "150px";
+    themeBtn.style.right = "20px";
+    themeBtn.style.padding = "10px";
+    themeBtn.style.border = "none";
+    themeBtn.style.borderRadius = "8px";
+    themeBtn.style.cursor = "pointer";
 
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
+    document.body.appendChild(themeBtn);
 
-    if (document.body.classList.contains("light-mode")) {
-        localStorage.setItem("theme", "light");
+    if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
         themeBtn.innerText = "🌙";
-    } else {
-        localStorage.setItem("theme", "dark");
-        themeBtn.innerText = "☀️";
     }
-});
 
+    themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
 
+        if (document.body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            themeBtn.innerText = "🌙";
+        } else {
+            localStorage.setItem("theme", "dark");
+            themeBtn.innerText = "☀️";
+        }
+    });
+
+    // FORM HANDLING 
     const regForm = document.getElementById("registrationForm");
 
-if (regForm) {
-    regForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    if (regForm) {
 
-        console.log("FORM SUBMIT TRIGGERED");
+        // SUBMIT EVENT LISTENER
+        regForm.addEventListener("submit", (e) => {
+            e.preventDefault();
 
-        const name = document.getElementById("name")?.value.trim();
-        const username = document.getElementById("username")?.value.trim();
-        const email = document.getElementById("email")?.value.trim();
-        const age = document.getElementById("age")?.value.trim();
-        const weight = document.getElementById("weight")?.value.trim();
+            // EXTRACT VALUES (DOM API)
+            const name = document.getElementById("name").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const age = document.getElementById("age").value.trim();
+            const weight = document.getElementById("weight").value.trim();
+            const notes = document.getElementById("notes").value.trim();
 
-        const plan = document.querySelector('input[name="plan"]:checked')?.value;
-        const gender = document.querySelector('input[name="gender"]:checked')?.value;
+            const planElement = document.querySelector('input[name="plan"]:checked');
+            const genderElement = document.querySelector('input[name="gender"]:checked');
 
-        const goals = [];
-        document.querySelectorAll('input[type="checkbox"]:checked')
-            .forEach(cb => goals.push(cb.value));
+            const plan = planElement ? planElement.value : null;
+            const gender = genderElement ? genderElement.value : null;
 
-        if (!name) return alert("Missing name");
-        if (!username) return alert("Missing username");
-        if (!email) return alert("Missing email");
-        if (!age) return alert("Missing age");
-        if (!weight) return alert("Missing weight");
-        if (!plan) return alert("Select plan");
-        if (!gender) return alert("Select gender");
-        if (goals.length === 0) return alert("Select at least one goal");
+            // CHECKBOX LOOP
+            const goals = [];
+            const goalCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
-        alert("Registration successful 💪");
-        regForm.reset();
-    });
-}
+            for (let i = 0; i < goalCheckboxes.length; i++) {
+                goals.push(goalCheckboxes[i].value);
+            }
+
+            // VALIDATION (CONDITIONALS)
+            if (name === "" || username === "" || email === "") {
+                alert("Please fill all text fields");
+                return;
+            }
+
+            if (!age || !weight) {
+                alert("Enter age and weight");
+                return;
+            }
+
+            if (!plan) {
+                alert("Select a plan");
+                return;
+            }
+
+            if (!gender) {
+                alert("Select a gender");
+                return;
+            }
+
+            if (goals.length === 0) {
+                goals.push("None");
+            }
+
+            // STORE DATA OBJECT
+            const userData = {
+                Name: name,
+                Username: username,
+                Email: email,
+                Age: age,
+                Weight: weight + " kg",
+                Gender: gender,
+                Goals: goals.join(", "),
+                Plan: plan,
+                Notes: notes === "" ? "None" : notes
+            };
+
+            // SAVE DATA
+            localStorage.setItem("gymData", JSON.stringify(userData));
+
+            // REDIRECT TO TABLE PAGE
+            window.location.href = "result.html";
+        });
+
+        // EXTRA EVENT LISTENER 
+        regForm.addEventListener("reset", () => {
+            console.log("Form reset");
+        });
+    }
 });
