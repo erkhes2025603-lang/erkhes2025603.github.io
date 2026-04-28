@@ -1391,7 +1391,7 @@ body {
 }
 
 .facilities p {
-    color: #aaa;
+    color: #ffffff;
     margin-bottom: 40px;
 }
 
@@ -1402,11 +1402,12 @@ body {
 }
 
 .facility-card {
-    background: #111;
+    background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
     position: relative;
+    border: 1px solid var(--border-color);
 }
 
 /* IMAGE */
@@ -1461,8 +1462,9 @@ body {
 }
 
 .facility-card:hover p {
-    color: #fff;
+    color: var(--text-main);
 }
+
 .details {
     max-height: 0;
     overflow: hidden;
@@ -1470,21 +1472,26 @@ body {
 }
 
 .facility-card.active .details {
-    max-height: 200px; /* enough to show content */
+    max-height: 200px;
 }
+
 summary {
     padding: 10px;
+    color: var(--text-main);
 }
 
 .facility-card[open] summary {
-    background-color: #1e293b;
+    background-color: var(--card-bg);
 }
+
 .facility-card ul {
-    list-style: none;   
+    list-style: none;
+    padding: 10px 15px;
 }
 
 .facility-card li {
     margin-bottom: 5px;
+    color: var(--text-dim);
 }
 
 .location-map {
