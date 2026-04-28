@@ -1016,7 +1016,7 @@ body.light-mode .button-primary {
 }
 
 body.light-mode a.button-primary,
-body.light-mode .button-primary{
+body.light-mode .button-primary {
     background: #ff4d4d !important;
     color: white !important;
 }
@@ -1026,34 +1026,35 @@ body.light-mode nav a {
 }
 
 body.light-mode nav a:hover,
-body.light-mode nav a.active{
+body.light-mode nav a.active {
     color: #ff4d4d;
 }
 
 body.light-mode .button-primary,
-body.light-mode button{
+body.light-mode button {
     background: #ff4d4d;
     color: white;
     border: none;
 }
 
 body.light-mode .button-primary:hover,
-body.light-mode button:hover{
+body.light-mode button:hover {
     background: #e60000;
 }
 
- .plan-money a:hover{
+ .plan-money a:hover {
   background-color: #ffd700;
 }
 
-footer{
+footer {
   background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
   border-top: 3px solid #d4af37;
   color: #f5f5f5;
   padding: 50px 40px 30px;
   margin-top: 60px;
 }
-.footer-grid{
+
+.footer-grid {
   display: flex;
   gap: 50px;
   max-width: 1000px;
@@ -1061,6 +1062,7 @@ footer{
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
+
 .footer-brand, .footer-links, .footer-contact {
   flex: 1;
   min-width: 220px;
@@ -1072,7 +1074,7 @@ footer{
   font-size: 1.1rem;
 }
 
-.footer-brand p{
+.footer-brand p {
   color: #ccc;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -1085,7 +1087,7 @@ footer{
   /* test */
 }
 
-.footer-links ul li{
+.footer-links ul li {
   margin: 12px 0;
   padding: 5px;
 }
@@ -1098,14 +1100,16 @@ footer{
 }
 
 /* hover effects */
-.footer-links a:hover{
+.footer-links a:hover {
   color: #d4af37;
 }
-.footer-contact p{
+
+.footer-contact p {
   color: #ccc;
   margin: 10px 0;
   font-size: 0.95rem;
 }
+
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
@@ -1117,11 +1121,13 @@ footer{
   align-items: center;
   font-size: 0.9rem;
 }
+
 .back-to-top {
   color: #d4af37;
   text-decoration: none;
   font-weight: bold;
 }
+
 .back-to-top:hover {
   color: #ffd700;
 }
@@ -1131,26 +1137,32 @@ footer{
   font-size: 3rem;
   color: #d4af37;
 }
+
 /* global font attempt */
 * {
   font-family: Arial;
 }
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     gap: 15px;
   }
+
   nav {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .welcome_section {
     flex-direction: column;
   }
+
   .plans {
     flex-direction: column;
     align-items: center;
   }
+
   .footer-grid {
     flex-direction: column;
     gap: 30px;

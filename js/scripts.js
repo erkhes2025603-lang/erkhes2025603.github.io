@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     backToTop.innerText = "↑";
     backToTop.style.position = "fixed";
-    backToTop.style.bottom = "20px";
+    backToTop.style.bottom = "600px";
     backToTop.style.right = "20px";
     backToTop.style.padding = "10px 15px";
     backToTop.style.fontSize = "18px";
