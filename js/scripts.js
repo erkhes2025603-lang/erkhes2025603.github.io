@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+        // FACILITY CARDS TOGGLE (EVENT LISTENER)
+    const facilityCards = document.querySelectorAll('.facility-card');
+    
+    facilityCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
 
     // SMOOTH SCROLLING (EVENT LISTENERS)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -110,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     backToTop.innerText = "↑";
     backToTop.style.position = "fixed";
-    backToTop.style.bottom = "600px";
+    backToTop.style.bottom = "20px";
     backToTop.style.right = "20px";
     backToTop.style.padding = "10px 15px";
     backToTop.style.fontSize = "18px";

@@ -1526,3 +1526,15 @@ summary {
         height: 350px;
     }
 }
+/* FACILITY CARD TOGGLE */
+.facility-card {
+    cursor: pointer;
+}
+
+.facility-card.active .details {
+    display: block;
+}
+
+.facility-card:not(.active) .details {
+    display: none;
+}
